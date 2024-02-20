@@ -7,9 +7,10 @@ rnd_arr = list(numpy.random.choice(x, 1000))
 amount_data = []
 for j in range(0, 10):
     amount_data.append(rnd_arr.count(x[j]))
-print(amount_data)
 print('среднее =', statistics.mean(rnd_arr))
 print('медиана =', statistics.median(rnd_arr))
+fig = pyplot.figure(figsize=(10, 10))
+ax = fig.add_subplot()
+ax.scatter(x, amount_data)
+ax.grid()
 pyplot.show()
-pyplot.grid()
-pyplot.scatter(x, amount_data)
