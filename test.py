@@ -1,11 +1,15 @@
-from matplotlib import pyplot as plt
-import numpy as np
+import numpy
+import statistics
+from matplotlib import pyplot
 
-marks = ['Неуд', 'Удовл', 'Хор', 'Отл']
-
-data = [3, 7, 8, 4]
-fig = plt.figure(figsize=(10, 7))
-plt.pie(data, labels = marks)
-plt.show()
-plt.grid()
-plt.scatter(marks, data)
+x = [i/10 for i in range(0, 10)]
+rnd_arr = list(numpy.random.choice(x, 1000))
+amount_data = []
+for j in range(0, 10):
+    amount_data.append(rnd_arr.count(x[j]))
+print(amount_data)
+print('среднее =', statistics.mean(rnd_arr))
+print('медиана =', statistics.median(rnd_arr))
+pyplot.show()
+pyplot.grid()
+pyplot.scatter(x, amount_data)
